@@ -1,0 +1,24 @@
+<!-- 운동 부위 목록 페이지 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>운동/기구 검색</title>
+</head>
+<body>
+
+    <!-- 검색창 -->
+    <form action="{% url 'health:arm_list' %}" method="GET">
+            <input type="text" placeholder="운동 이름을 검색하세요!" name="keyword">
+            <input type="submit" value="검색">
+        </form>
+
+        <p></p>
+
+    <!-- 전체 운동 목록(모델 삭제 가능) -->
+    {% for health in healths %}
+        <div><a href="{% url 'health:arm_list' %}">{{ health }}</a></div>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!-- 내가 찜한 헬스장 목록 페이지 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>찜한 헬스장 목록</title>
+</head>
+<body>
+    <a href="{% url 'health:mypage' %}">뒤로가기</a><br>
+
+    <a href="{% url 'health:exer_list' %}">스크랩한 운동 목록</a>
+
+    <h3>내가 찜한 헬스장 목록</h3>
+    
+    {% for like in likes %}
+        <div>{{ like.gym_name  }}</div>
+        <div>{{ like.address }}</div><br>
+    {% endfor %}
+</body>
+</html>

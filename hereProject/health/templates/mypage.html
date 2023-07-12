@@ -1,0 +1,19 @@
+<!-- 마이페이지 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+</head>
+<body>
+    <h3>MY PAGE</h3>
+
+    <a href="{% url 'health:gym_list' %}">목록 확인하기</a>
+    <br>
+
+    <a href="{% url 'health:king1' %}"># 성실왕</a>
+    <a href="{% url 'health:king2' %}"># 운동왕</a>
+    <a href="{% url 'health:king3' %}"># 끈기왕</a>
+</body>
+</html>

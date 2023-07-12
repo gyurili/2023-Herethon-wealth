@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %} {% endblock %}
+    {% block head %} {% endblock %}
+</head>
+<body>
+    <nav>
+    <!-- 메뉴바 리스트 -->
+        <ul>
+            <!--투두 바꾸기-->
+            <li><a href="{% url 'health:main' %}">Home</a></li>
+            <li><a href="{% url 'health:gym' %}">헬스장</a></li>
+            <li><a href="{% url 'health:health_list' %}">운동</a></li>
+            <li><a href="{% url 'health:todo' %}">투두</a></li>
+            <li><a href="{% url 'health:mypage' %}">마이페이지</a></li>
+        </ul>
+    </nav>
+    {% block content %} {% endblock %}
+</body>
+</html>
