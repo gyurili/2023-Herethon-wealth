@@ -1,0 +1,74 @@
+<!-- 자메이카짐 상세 페이지 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자메이카짐 상세 페이지</title>
+    <style>
+        .coupon {
+            width: 200px;
+            height: 30px;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        .review-box {
+            width: 280px;
+            height: 150px;
+            background-color: #f0f0f0;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 나중에 합칠 때 구분하기 위해 임시로 적어둠-->
+    <div>
+        <p>자메이카짐</p>
+    </div>
+    
+    <div class="coupon">
+        <p>33,000원 할인 쿠폰</p>
+    </div>
+
+    <div>
+        <p>서울특별시 관악구 신림로 340</p>
+        <p>관악구 최대규모(1,000평)</p>
+        <p>관악구 최대 프리웨이트 공간 확보
+            <br>(파워렉 4대, 스미스머신 3대)
+        </p>
+        <p>2020년 올 리모델링 완료</p>
+        <p>요가/필라테스/줌바/에어로빅 등 GX 전종목 무료</p>
+    </div>
+
+    <hr>
+
+    <div>
+        <p>전화</p>
+        <p>영업시간</p>
+        <p>가격</p>
+        <p>이벤트</p>
+    </div>
+
+    <hr>
+
+    <div>
+        <h3>트레이너 소개</h3>
+    </div>
+    
+    <hr>
+    
+    <div>
+        <h3>방문자 리뷰</h3>
+        {% for review in reviews %}
+        <div class="review-box">
+            <h3>{{ review.title }}</h3>
+            <h6>{{ review.body }}</h6>
+        </div>
+        {% endfor %}
+    </div>
+
+
+</body>
+</html>

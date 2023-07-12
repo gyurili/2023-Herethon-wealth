@@ -1,0 +1,14 @@
+<!-- 메인 페이지 -->
+{% extends 'base.html' %} {% block title %}
+<title>MAIN</title>
+{% endblock %} {% block content %}
+
+    <hr>
+    <!-- 메인에서 바로 클릭하기 -->
+    <a href="{% url 'gym' %}">헬스장</a>
+    <a href="{% url 'exercise' %}">운동</a>
+    <a href="{% url 'todo' %}">투두</a>
+    <hr>
+    <!-- 마이페이지 바로가기 -->
+    <a href="{% url 'mypage' %}">마이페이지 바로가기</a>
+{% endblock %}

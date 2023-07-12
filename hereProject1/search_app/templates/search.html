@@ -1,0 +1,103 @@
+<!-- 헬스장 검색 페이지 -->
+{% extends 'base.html' %} {% block title %}
+<title>GYM SEARCH</title>
+{% endblock %} 
+{% block head %} 
+    <style>
+        .search {
+            width: 200px;
+            height: 30px;
+            background-color: #f0f0f0;
+        }
+        .gym-box {
+            width: 150px;
+            height: 150px;
+            background-color: #f0f0f0;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .like-button {
+        background-color: #ffffff;
+        border: 1px solid #cccccc;
+        padding: 5px 10px;
+        color: #000000;
+        text-decoration: none;
+        }
+
+        .like-button.liked {
+        background-color: #ff0000;
+        color: #ffffff;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <p>헬스장 검색 페이지</p>
+    <hr>
+    <!-- 검색 기능 -->
+    <form class="search" action="{% url 'search_app:searchResult' %}" method="get">
+        {% csrf_token %}
+        <input type="search" placeholder="Search" aria-label="Search" name="q">
+        <button type="submit">search</button>
+    </form>
+
+
+    <hr>
+    
+    <!-- 한 줄로 출력하도록 수정-->
+    <div>
+        <span>
+            <p>기본</p>
+            <p>가까운 순</p>
+            <p>여성트레이너 있는</p>
+            <p>여성전용</p>
+            <p>마감 늦은 순</p>
+        </span>
+    </div>
+        
+    <hr>
+
+    <!-- 좋아요 추가해야 됨 -->
+    <!-- 헬스장 목록 -->
+    <div>
+    <!-- 헬스장 목록을 나타내기 위한 반복문-->
+    {% for place in places %}
+    <div class="gym-box">
+        <a href="{% url 'jamaGym'%}"><h3>{{ place.placeName }}</h3></a>
+        <button class="like-button" data-place-id="{{ place.id }}">좋아요</button>
+    </div>
+    {% endfor %}
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+    $('.like-button').click(function(e) {
+        e.preventDefault();
+        var placeId = $(this).data('place-id');
+        var button = $(this);
+
+        $.ajax({
+        url: '/gym/like/',
+        type: 'POST',
+        data: {
+            'place_id': placeId,
+            'csrfmiddlewaretoken': '{{ csrf_token }}'
+        },
+        dataType: 'json',
+        success: function(response) {
+            if (response.success) {
+            if (response.liked) {
+                button.addClass('liked');
+            } else {
+                button.removeClass('liked');
+            }
+            }
+        }
+        });
+    });
+    });
+    </script>
+
+
+{% endblock %}
