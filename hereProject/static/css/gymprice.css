@@ -1,0 +1,75 @@
+body{
+    background-color: rgb(215, 208, 184);
+    height: 100%;
+    margin: 0;
+}
+.container {
+    display: flex;
+    width:390px;
+    height: 2445px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    flex-direction: column;
+  }
+  .fst {  
+    position: relative;
+    margin : 0;
+    width:390px;
+    height:450px;
+    overflow: hidden;
+} 
+.fst img{
+    position: absolute;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+.sec{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 10px;
+}
+
+.coupon {
+    position:relative;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 10px;
+}
+.coupon img[src="img/coupon.png"] {
+    position: absolute;
+    width: 340px;
+    height: 50px;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.coupon h2 {
+    position: absolute;
+    top: 69%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 15px;
+    color: black;
+    white-space: nowrap;
+}
+.thrd{
+    text-align: center;
+    margin-top: 10px;
+}
+.fourth{
+    text-align: center;
+    margin-top: 30px;
+    word-spacing: 30px;
+}
+.fifth{
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 48px;
+    width : 200px;
+    height: 80px;
+}
+a {
+    text-decoration: none;
+}

@@ -1,15 +1,57 @@
-<!-- 오버 헤드 익스텐션 상세페이지 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>오버 헤드 익스텐션 상세페이지</title>
+    <link rel="stylesheet" href="/static/css/overhead.css">
+    <title>Wealth</title>
 </head>
 <body>
-    <a href="{% url 'health:arm_list' %}">뒤로가기</a>
+<div class="container">
 
-    <h3>어깨&팔, 덤벨</h3>
-    <h1>오버 헤드 익스텐션</h1>
+        <div class="statusBar"><img src="/static/img/Status Bar (iPhone).png"></div>
+        <div class="icon"> 
+            <a href="{% url 'health:arm_list' %}"><img src ="/static/img/arrowleftwhite.png"alt="이전" class="back_icon"></a>
+            <a href="{% url 'health:mypage' %}"><img src="/static/img/Vector.png" alt="목록" class="list_icon"></a>
+        </div>
+        <div class="header">
+            <h2>어깨&팔, 덤벨</h2>
+            <h1>오버헤드 익스텐션</h1>
+            <img src="/static/img/cardMascot3.png">
+            <div class="rec"></div>
+        </div>
+        <div class="arm-container">
+            <div class="arm-category1" >
+                <a href="dumbbell.html">
+                    <h2 class="name">오버 헤드 익스텐션 </h2>
+                    <h2 class="level"> 덤벨, 난이도 ★★☆☆☆</h2> 
+                </a>
+            </div>
+            <div class="arm-category2" >
+                <h2 class="name">사용법</h2>
+                <div class="video">
+                <video style="margin-top: 50px;" src="/static/img/video.mp4"  type="video/mp4"controls></video>
+            </div>
+            <h2 class="level" style="top: 225px;"> #덤벨로 쉽게 하는 어깨운동!      제이수란</h2> 
+            </div>
+            <div class="arm-category3" >
+                <h2 class="name">주의할 점 </h2>
+                <h2 class="level" style="font-size: 14px;"> 
+            
+                1. 허리를 바르게 펴고 몸이 수직이 되는 자세<br/>
+                2. 물이 든 잔을 그대로 올리는 느낌<br/>
+                3. 덤벨이 내려갈 때 팔 각도는 직각 유지<br/>
+                4. 팔이 바깥으로 벌어지지 않도록 고정<br/>
+            
+            </h2> 
+            </div>
+            <div class="arm-category4" >
+                <h2 class="name">자극점 </h2>
+                <img src="/static/img/point.png" class="point">
+            </div>
+        </div>
+        <div class="FooterBar">
+            <img src="/static/img/Safari Tool bar.png">
+        </div>
+</div>
+    <script src="/static/js/myPage.js"></script>
 </body>
 </html>

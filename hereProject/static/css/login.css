@@ -1,0 +1,84 @@
+body {
+    background-color: rgb(215, 208, 184);
+    height: 100%;
+    margin: 0;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 390px;
+    height: 845px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+}
+
+.fst {
+    margin-top: 40%;
+}
+.logo {
+    text-align: center;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: #3A7BBC;
+}
+.sec {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 10%;
+    box-sizing: border-box;
+    width: 312px;
+    height: 52px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+.sec input {
+    text-align: center;
+    border: none;
+    width: 100%;
+    height: 100%;
+    outline: none;
+}
+
+.third {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5%;
+    box-sizing: border-box;
+    width: 312px;
+    height: 52px;
+}
+.third input {
+    text-align: center;
+    border: none;
+    width: 100%;
+    height: 100%;
+    outline: none;
+}
+.fourth {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-top: 15%;
+    width: 163px;
+    height: 52px;
+}
+a {
+    text-decoration: none;
+}
+.fifth {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 7%;
+}

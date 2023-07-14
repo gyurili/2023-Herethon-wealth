@@ -1,0 +1,205 @@
+body {
+    background-color: rgb(215, 208, 184);
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 390px;
+    height: 1100px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    flex-direction: column;
+
+}
+.fst {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20%;
+    margin-left: 24px;
+}
+.logo {
+    margin-left: 2%;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: #3A7BBC;
+}
+a {
+    text-decoration: none;
+}
+
+.list_icon {
+    margin-right: 50px;
+    margin-top: -10px;
+}
+.sec {
+    margin-top: 6%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.search-input {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: white;
+}
+.search-input::placeholder {
+    color: white;
+}
+.workoutbtn-container {
+    display: flex;
+    margin-top: 10%;
+    text-align: center;
+    justify-content: center;
+    color: black;
+    flex-direction: row;
+}
+.fourth {
+    text-align: center;
+    justify-content: center;
+}
+
+.fifth {
+    margin-top: 5%;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+}
+.fifth img[src="img/heart.png"] {
+    position: absolute;
+    top: 73%;
+    left: 83%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 15px;
+    height: auto;
+}
+.fifth img[src="img/share.png"] {
+    position: absolute;
+    top: 73%;
+    left: 77%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 15px;
+    height: auto;
+}
+.sixth {
+    margin-top: 5%;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+}
+.sixth img[src="img/heart.png"] {
+    position: absolute;
+    top: 73%;
+    left: 83%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 15px;
+    height: auto;
+}
+.sixth img[src="img/share.png"] {
+    position: absolute;
+    top: 73%;
+    left: 77%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 15px;
+    height: auto;
+}
+
+.sev {
+    margin-top: 5%;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+}
+.sev img[src="img/heart.png"] {
+    position: absolute;
+    top: 73%;
+    left: 83%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 15px;
+    height: auto;
+}
+.sev img[src="img/share.png"] {
+    position: absolute;
+    top: 73%;
+    left: 77%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 15px;
+    height: auto;
+}
+.fifth h1{
+    position: absolute;
+    top: 70%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 15px;
+    color: black;
+}
+.fifth h2{
+    position: absolute;
+    top: 80%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 12px;
+    color: gray;
+}
+.sixth h1{
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 15px;
+    color: black;
+}
+.sixth h2{
+    position: absolute;
+    top: 80%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 12px;
+    color: gray;
+}
+.sev h1{
+    position: absolute;
+    top: 70%;
+    left: 28%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 15px;
+    color: black;
+}
+.sev h2{
+    position: absolute;
+    top: 80%;
+    left: 46%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 12px;
+    color: gray;
+    white-space: nowrap;
+}

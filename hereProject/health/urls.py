@@ -6,13 +6,19 @@ app_name='health'
 urlpatterns = [
 
     # 유새연
-    path('', views.home, name='main'),
+    path('', views.main, name='main'),
     path('gym/', views.gym , name='gym'),
+    path('gym/reverse/', views.gym_reverse, name='gym_reverse'),
     path('exercise/', views.exercise , name='exercise'),
     path('todo/', views.todo , name='todo'),
-    path('mypage/', views.mypage, name='mypage'),
     path('gym/like/', views.likeGym, name='likeGym'),
     path('gym/jamaGym/', views.jamaGym , name='jamaGym'),
+    path('gym/jamaGym/create', views.create_review , name='create_review'),
+    path('gym/jamaGym/update/<int:id>/', views.update_review, name='update_review'),
+    path('gym/jamaGym/delete/<int:id>/', views.delete_review, name='delete_review'),
+    path('gym/jamaGymevent/', views.jamaGymevent , name='jamaGymevent'),
+    path('gym/jamaGymopen/', views.jamaGymopen , name='jamaGymopen'),
+    path('gym/jamaGymprice/', views.jamaGymprice , name='jamaGymprice'),
     #박규리
     path('health_list/', views.health_list, name="health_list"),
     path('arm_list/', views.arm_list, name="arm_list"),

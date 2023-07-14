@@ -7,13 +7,13 @@ from .models import *
 def todolist(request):
     todos=Todo.objects.filter(is_done=False) #필터링
     dones=Todo.objects.filter(is_done=True)
-    return render(request, 'home.html', {'todos':todos,'dones':dones})
+    return render(request, 'todohome.html', {'todos':todos,'dones':dones})
 #home.html 없어서 에러. 프엔 home 역할 하는 부분으로 바꿔주기
 
 #저장
 def create(request):
     new_todo=Todo()
-    new_todo.content=request.content=request.POST['content']
+    new_todo.content=request.POST['content']
     new_todo.is_done=False
     new_todo.save()
     return redirect('todohome')
