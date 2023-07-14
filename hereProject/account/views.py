@@ -1,37 +1,45 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth import get_user_model
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
+from django.contrib import auth
+
+#
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from .forms import RegisterForm
 
 # Create your views here.
-#home 함수 추가 - url에서 메인 경로로 연결해줌+ views에서 redirect home도 있음
 
 def login_view(request):
-    if request.method=='POST':
-        form=AuthenticationForm(request=request, data=request.POST)
-        if form.is_valid():
-            username=form.cleaned_data.get('username')
-            password=form.cleaned_data.get('password')
-            user=authenticate(request=request, username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('home')
-
-    else:
-        form=AuthenticationForm()
-        return render(request, 'login.html',{'form':form})
+    if request.method == "POST":
+        userid = request.POST['username']
+        pwd = request.POST['password']
+        user = auth.authenticate(request, username=userid, password=pwd)
+        if user is not None:
+            auth.login(request, user)
+            return redirect('health:main')
+        else:
+            return render(request, 'login.html', {'error': '입력한 내용을 다시 확인해주세요.'})
+    else: 
+        return render(request, 'login.html')
     
 def logout_view(request):
     logout(request)
-    return redirect('home')
+    return redirect('main')
 
 def signup_view(request):
-    if request.method=='POST':
-        form=RegisterForm(request.POST)
-        if form.is_valid():
-            user=form.save()
-            login(request, user)
-        return redirect('home')
-    else:
-        form=RegisterForm()
-        return render(request, 'signup.html',{'form':form})
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        password2 = request.POST['password2']
+        
+        if password == password2:
+            user = User.objects.create_user(username=username, password=password)
+            auth.login(request, user)
+            return render(request, 'login.html')
+        else:
+            return render(request, 'signup.html', {'error': '비밀번호를 동일하게 입력하세요.'})
+    
+    return render(request, 'signup.html')

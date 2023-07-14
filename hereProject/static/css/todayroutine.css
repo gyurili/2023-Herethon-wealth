@@ -1,0 +1,235 @@
+/*화면 크기 맞추기*/
+body{
+    background-color: rgb(215, 208, 184);
+    height: 100%;
+    margin: 0;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    width: 390px;
+    height: 795px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.25);
+
+  }
+/*아이폰 상단바*/
+.statusBar,.FooterBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13.4615px 25px 11.5385px 25.9615px;
+    gap: 197.12px;
+    isolation: isolate;
+    width: 375px;
+    height: 45.19px;
+    margin: 0 auto;
+    margin-top: -13px;
+}
+/*이전, 목록 아이콘*/
+.icon1 {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    margin-top: 64px;
+    margin-left: 24px;
+}
+.list_icon{
+    margin-right:13px;
+    margin-top:-10px;
+}
+h2{
+margin-top:5px;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 21px;
+color: #3A7BBC;
+}
+
+/*휴지통, 글쓰기 아이콘*/
+.icon2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: calc(50% - 171px);
+    width: 342px;
+    height: 34px;
+  }
+.bin{
+position: absolute;
+width: 34px;
+height: 34px;
+left: 43px;
+top: 140px;
+}
+.pen{
+position: absolute;
+width: 34px;
+height: 34px;
+left: 270px;
+top: 140px;
+}
+.mascot{
+    position: absolute;
+    width: 118px;
+    height: 90px;
+    left: calc(50% - 55px);
+    top: 128px;
+    animation: mascotAnimation 2s ease-in-out infinite alternate;
+
+}
+/*마스코트 캐릭터 위아래 애니메이션*/
+@keyframes mascotAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+/*todo 목록*/
+.todo-list-container{
+box-sizing: border-box;
+position: absolute;
+width: 341px;
+height: 352px;
+left: calc(50%+25px);
+top: 209px;
+background: #FFFFFF;
+border: 1px solid #D9D9D9;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0;
+gap: 16px;
+overflow-y: scroll;
+overflow-x: hidden;
+}
+.todo-list-container > div{
+width: 302px;
+height: 33px;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 12px;
+position: relative;
+width: 302px;
+height: 33px;
+left: 20px;
+top: 25px;
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+/*스크롤바 커스텀*/
+.todo-list-container::-webkit-scrollbar {
+    width: 8px;
+    background-color: #FFFFFF;
+  }
+  
+  .todo-list-container::-webkit-scrollbar-thumb {
+    background-color: #FFFFFF;
+  }
+  
+  .todo-list-container::-webkit-scrollbar-thumb:hover {
+    background-color: #FFFFFF;
+  }
+.line{
+position: absolute;
+width: 302px;
+height: 0px;
+left: 0px;
+top: 33px;
+border: 1px solid #D9D9D9;
+}
+h3{
+position: absolute;
+width: 200px;
+height: 19px;
+left: 46px;
+top: -8px;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height:0px;
+color: #000000;
+}
+.cancel{
+position: absolute;
+width: 16px;
+height: 16px;
+left: 272px;
+top: 3px;
+}
+.check{
+position: absolute;
+border: 1.5px solid #D9D9D9;
+}
+.todo2{
+    order: 1;
+}
+.todo3{
+    order: 2;
+}
+.todo4{
+    order: 3;
+}
+.todo5{
+    order: 4;
+}
+.todo6{
+    order: 5;
+}
+/*오늘의 운동 완료하기 버튼*/
+.clearbtn{
+position: absolute;
+width: 176px;
+height: 42px;
+left: calc(50% - 192px/2);
+top: 600px;
+background: rgba(0,0,0,0.05);
+box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+border-radius: 100px;
+border: none;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+color: #000000;
+transition: background-color 0.2s ease-in-out;
+
+}
+.clearbtn:hover{
+    background-color: firebrick;
+   color: white;
+}
+
+/*팝업창*/
+.wrap{padding:10px;}
+
+.pop_wrap{position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,.5); font-size:0; text-align:center;}
+.pop_wrap:after{display:inline-block; height:100%; vertical-align:middle; content:'';}
+.pop_wrap .pop_inner{display:inline-block; padding:20px 30px; background:#fff; width:200px; vertical-align:middle; font-size:14px;}
+.btn_close{
+    background-color: #fff; border-color:#3A7BBC ; color:#3A7BBC; width: 90px; border-radius: 5px; font-size: 12px; height: 20px;
+}
+/*아이폰 하단바*/
+.FooterBar {
+    right: 16px;
+    margin-top: 735px;
+}

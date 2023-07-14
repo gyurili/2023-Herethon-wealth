@@ -1,0 +1,202 @@
+/*화면 크기 맞추기*/
+body{
+    background-color: rgb(215, 208, 184);
+    height: 100%;
+    margin: 0;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    width: 390px;
+    height: 1290px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.25);
+
+  }
+/*아이폰 상단바*/
+.statusBar,.FooterBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13.4615px 25px 11.5385px 25.9615px;
+    gap: 197.12px;
+    isolation: isolate;
+    width: 375px;
+    height: 45.19px;
+    margin: 0 auto;
+    margin-top: -13px;
+    z-index: 1; 
+}
+/*아이콘*/
+.icon {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    margin-top: 64px;
+    margin-left: 24px;
+    z-index: 1; 
+}
+.list_icon{
+    margin-right:19px;
+    margin-top:-10px;
+
+}
+/*세부 설명(사용법, 주의할 점, 자극점)*/
+.video {
+    width: 90%;
+    position: relative;
+    margin-left: 15px;
+    z-index: 1;
+}
+.video video {
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+}
+.arm-container{
+    position: absolute;
+    width: 342px;
+    height: 600px;
+    left: calc(50% - 171px);
+    top: 320px;
+    }
+    .arm-category1,.arm-category2,.arm-category3,.arm-category4{
+    width: 342px;
+    height: 72px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.05);
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    }
+    .name{
+    position: absolute;
+    width: 160px;
+    height: 26px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    top: 20px; 
+    left: 17px;
+    margin: 0; 
+    }
+    .level{
+    position: absolute;
+    width: 300px;
+    height: 19px;
+    left: 17px;
+    top: 30px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    
+    }
+    .arm-category2{
+    order: 1;
+    top: 90px;
+    height: 271px;
+    }
+    .arm-category3{
+    order: 2;
+    top: 380px;
+    height: 157px;
+    }
+    .arm-category4{
+    order: 3;
+    top: 558px;
+    height: 296px;
+    }
+.point{
+ margin-top: 50px;
+width: 309px;
+height: 206px;
+flex: none;
+order: 0;
+flex-grow: 0;
+margin-left: 15px;
+}
+/*맨 위 부분*/
+.header{
+position: absolute;
+width: 390px;
+height: 302px;
+top: -1px;
+background-color: #3A7BBC;
+z-index: 0;
+}
+.header img{
+position: absolute;
+top: 207px;
+position: absolute;
+width: 138.43px;
+height: 107px;
+left: 139px;
+animation: mascotAnimation 2s ease-in-out infinite alternate;
+}
+/*마스코트 캐릭터 위아래 애니메이션*/
+@keyframes mascotAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+.rec{
+position: absolute;
+width: 134px;
+height: 26px;
+left: 137px;
+top: 302px;
+background: #FFFFFF;
+}
+/*맨 위 텍스트*/
+.header h2{
+position: absolute;
+width: 120px;
+height: 21px;
+left: calc(50% - 99px/2 + 0.5px);
+top: 124px;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 21px;
+color: #FFFFFF;
+}
+.header h1{
+position: absolute;
+width: 170px;
+height: 24px;
+left: calc(50% - 143px/2 + 2.5px);
+top: 156px;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+color: #FFFFFF;
+}
+/*아이폰 하단바*/
+.FooterBar {
+    right: 16px;
+    margin-top: 1250px;
+}

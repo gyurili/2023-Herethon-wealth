@@ -1,0 +1,278 @@
+/*화면 크기 맞추기*/
+body{
+    background-color: rgb(215, 208, 184);
+    height: 100%;
+    margin: 0;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    width: 390px;
+    height: 795px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.25);
+
+  }
+/*아이폰 상단바*/
+.statusBar,.FooterBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13.4615px 25px 11.5385px 25.9615px;
+    gap: 197.12px;
+    isolation: isolate;
+    width: 375px;
+    height: 45.19px;
+    margin: 0 auto;
+    margin-top: -13px;
+}
+/*이전, 목록 아이콘*/
+.icon {
+    display: flex;
+    justify-content: space-between; /* 아이콘을 좌우로 정렬하기 위해 justify-content를 space-between으로 설정 */
+    width: 100%;
+    margin-top: 64px;
+    margin-left: 24px;
+}
+.list_icon{
+    margin-right:13px;
+    margin-top:-10px;
+}
+/*My Page 텍스트*/
+h2{
+position: absolute;
+width: 89px;
+height: 24px;
+left: calc(50% - 88px/2);
+top: 110px;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 24px;
+display: flex;
+align-items: center;
+text-align: center;
+color: #393939;
+}
+/*circle 이미지*/
+.circle{
+position: absolute;
+width: 96px;
+height: 96px;
+left: calc(50% - 48px); 
+top: 168px; 
+background: #EDEDED;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.mascot {
+    width: 71.25px;
+    height: 63.75px;
+}
+/*사용자 이름*/
+.useName{
+color: #393939;
+margin-top: 167px;
+}
+/*setting 아이콘*/
+.setting_icon{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: calc(50% + 30px);
+    top: 280px;
+}
+/*내 활동*/
+.activity p{
+position: absolute;
+width: 116px;
+height: 36px;
+left: calc(50% - 143.5px); 
+top: 310px;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 19px;
+color: #393939;
+}
+/*찜, 스크랩 네모 박스*/
+.rec{
+box-sizing: border-box;
+position: absolute;
+width: 307px;
+height: 120px;
+left: calc(50% - 153.5px); 
+top: 355px;
+background: #FFFFFF;
+border: 1px solid #EDEDED;
+box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+border-radius: 15px;
+}
+.recText{
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 50px;
+position: absolute;
+width: 256px;
+height: 54px;
+left: calc(50% - 128px);
+top:20px;
+}
+/* 내가 찜한 헬스장 */
+.act1,.act2{
+position: absolute;
+width: 108px;
+height: 36px;
+top: 0px;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+text-align: center;
+color: #393939;
+}
+.act1{
+    left: 0px;
+}
+.act2{
+    left: 153px;
+}
+.count1,.count2{
+position: absolute;
+width: 103px;
+height: 36px;
+top: 18px;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+color: #393939;
+}
+.count1{
+    left: 0px;
+}
+.count2{
+    left: 153px;
+}
+/*목록 확인하기 버튼*/
+.recFooter {
+    box-sizing: border-box;
+    position: absolute;
+    width: 308px;
+    height: 37px;
+    left: calc(50% - 153.5px); 
+    top: 439px;
+    background: #3A7BBC;
+    border: 1px solid #EDEDED;
+    border-radius: 0px 0px 15px 15px;
+    transition: background-color 0.2s ease-out; 
+
+}
+.recFooter:hover {
+    background-color: #265782;
+}
+.recFooter h4 {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 4px;
+    text-align: center;
+    color: #FFFFFF;
+}
+/*인증 카드 버튼*/
+.card p{
+position: absolute;
+width: 170px;
+height: 36px;
+left: calc(50% - 143.5px); 
+top: 506px;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 19px;
+color: #393939;
+}
+.card-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    gap: 15px;
+    position: absolute;
+    width: 400px;
+    height: 30px;
+    left: calc(50% - 200px);
+    top: 560px;  
+  }
+.card1,
+.card2,
+.card3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 86px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 100px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+  border: none;
+  transition: background-color 0.5s ease-in-out;
+}
+.card1 {
+  order: 1;
+}
+.card2 {
+  order: 2;
+}
+.card3 {
+  order: 3;
+}
+.card1:hover {
+   background-color: firebrick;
+   color: white; 
+ }
+ .card2:hover {
+    background-color: firebrick;
+    color: white; 
+  }
+  .card3:hover {
+    background-color: firebrick;
+    color: white; 
+  }
+a{
+  text-decoration-line: none;
+}
+/*아이폰 하단바*/
+.FooterBar {
+    right: 16px;
+    margin-top: 735px;
+}

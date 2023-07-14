@@ -1,73 +1,84 @@
 <!-- 헬스장 검색 페이지 -->
-{% extends 'base.html' %} {% block title %}
+{% extends 'base.html' %} 
+{% load static %}
+{% block title %}
 <title>GYM SEARCH</title>
 {% endblock %} 
-{% block head %} 
-    <style>
-        .search {
-            width: 200px;
-            height: 30px;
-            background-color: #f0f0f0;
-        }
-        .gym-box {
-            width: 150px;
-            height: 150px;
-            background-color: #f0f0f0;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            padding: 10px;
-        }
-        .like-button {
-        background-color: #ffffff;
-        border: 1px solid #cccccc;
-        padding: 5px 10px;
-        color: #000000;
-        text-decoration: none;
-        }
-
-        .like-button.liked {
-        background-color: #ff0000;
-        color: #ffffff;
-        }
-    </style>
+{% block head %}
+<link href="{% static 'css/gymsearch.css' %}" rel="stylesheet" />
 {% endblock %}
 {% block content %}
-    <p>헬스장 검색 페이지</p>
-    <hr>
-    <!-- 검색 기능 -->
-    <form class="search" action="{% url 'search_app:searchResult' %}" method="get">
-        {% csrf_token %}
-        <input type="search" placeholder="Search" aria-label="Search" name="q">
-        <button type="submit">search</button>
-    </form>
-
-
-    <hr>
-    
-    <!-- 한 줄로 출력하도록 수정-->
-    <div>
-        <span>
-            <p>기본</p>
-            <p>가까운 순</p>
-            <p>여성트레이너 있는</p>
-            <p>여성전용</p>
-            <p>마감 늦은 순</p>
-        </span>
+<div class="container">
+    <div class="fst"> 
+        <a href="{% url 'health:main' %}" alt="로고" class="logo">WEALTH</a>
+        <a><img src="/static/img/ic_menu.png" alt="목록" class="list_icon"></a>
     </div>
-        
-    <hr>
 
-    <!-- 좋아요 추가해야 됨 -->
+    <!-- 검색 기능 -->
+    <div class="sec">
+        <form class="search" action="{% url 'search_app:searchResult' %}" method="get">
+            {% csrf_token %}
+            <input type="search" placeholder="Search" aria-label="Search" name="q">
+            <button type="submit">
+                <img src="/static/img/search.png" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px;" alt="돋보기">
+            </button>
+        </form>
+    </div>  
+
+    
+
+    <!-- <div class="sec">
+        <img src="/static/img/searchbar.png" style="width: 320px;height:auto;" alt="검색바">
+        <input class="search-input" placeholder="헬스장을 검색해보세요!"></input>
+        <img src="/static/img/search.png" style="position: absolute; top: 48%; left: 92%; transform: translate(-50%, -50%); width: 20px; height: 20px;" alt="돋보기">
+    </div> -->
+
+    <div class="workoutbtn-container">
+        <button class="w1"style=" border: none;
+            background-color: transparent;
+            outline: none;
+            font-size: 10px;"><a href="{% url 'health:gym' %}">기본</a></button>
+        <button class="w2"style=" border: none;
+            background-color: transparent;
+            outline: none;
+            font-size: 10px;">가까운 순</button>
+        <button class="w3"style=" border: none;
+            background-color: transparent;
+            outline: none;
+            font-size: 10px;"><a href="{% url 'health:gym_reverse' %}">여성 트레이너 있는</a></button>
+        <button class="w4"style=" border: none;
+            background-color: transparent;
+            outline: none;
+            font-size: 10px;">여성 전용</button>    
+        <button class="w4"style=" border: none;
+            background-color: transparent;
+            outline: none;
+            font-size: 10px;">마감 늦은 순</button>        
+    </div>
+
+    <div class="fourth">
+        <img src="/static/img/blackline.png" style="width: 90%;height:auto;" alt="선">
+    </div>
+
     <!-- 헬스장 목록 -->
     <div>
-    <!-- 헬스장 목록을 나타내기 위한 반복문-->
-    {% for place in places %}
-    <div class="gym-box">
-        <a href="{% url 'health:jamaGym'%}"><h3>{{ place.placeName }}</h3></a>
-        <button class="like-button" data-place-id="{{ place.id }}">좋아요</button>
-    </div>
-    {% endfor %}
-    </div>
+        <!-- 헬스장 목록을 나타내기 위한 반복문-->
+        {% for place in places %}
+        <!-- 클래스명 확인 -->
+        <div class="fifth">
+            <!-- <img src="/static/img/gym.png" style="width: 320px;height:auto;" alt="헬스장사진"> -->
+            <a href="{% url 'health:jamaGym'%}"><h3>{{ place.placeName }}</h3></a>
+            <button class="like-button" data-place-id="{{ place.id }}">좋아요</button>
+            <!-- <img src="img/share.png" alt="공유">
+            <img src="img/heart.png" alt="하트"> -->
+            <h2>서울특별시 관악구 | 오전  6:00 영업 시작</h2>
+        </div>
+        {% endfor %}
+        </div>
+
+</div>
+
+<script src="gymsearch.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
