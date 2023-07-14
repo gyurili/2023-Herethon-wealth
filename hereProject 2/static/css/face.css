@@ -1,0 +1,88 @@
+/*화면 크기 맞추기*/
+body{
+    background-color: rgb(215, 208, 184);
+    height: 100%;
+    margin: 0;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    width: 390px;
+    height: 845px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.25);
+
+  }
+/*아이폰 상단바*/
+.statusBar,.FooterBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13.4615px 25px 11.5385px 25.9615px;
+    gap: 197.12px;
+    isolation: isolate;
+    width: 375px;
+    height: 45.19px;
+    margin: 0 auto;
+    margin-top: -13px;
+}
+/*로고*/
+.logo {
+    position: absolute;
+    width: 103px;
+    height: 24px;
+    left: 50%;
+    top: 127px;
+    transform: translateX(-50%); 
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #3A7BBC;
+  }
+/*얼굴 인식란*/
+.face-container{
+position: absolute;
+width: 314px;
+height: 335px;
+left: calc(50% - 314px/2 + 3px);
+top: 183px;
+
+}
+/*완료하기 버튼*/
+#addPersonButton, #startStopButton, #add{
+position: absolute;
+width: 173px;
+height: 48px;
+left: calc(50% - 173px/2 + 0.5px);
+top: 650px;
+background: #3A7BBC;
+border-radius: 12px 0px;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 600;
+font-size: 15px;
+line-height: 24px;
+display: flex;
+align-items: center;
+text-align: center;
+color: #FFFFFF;
+}
+#addPersonButton{
+  top: 700px;
+}
+#add {
+  top: 750px;
+}
+/*아이폰 하단바*/
+.FooterBar {
+    right: 16px;
+    margin-top: 750px;
+}

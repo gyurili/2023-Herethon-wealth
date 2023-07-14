@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/css/mylist.css">
+    <title>WEALTH</title>
+</head>
+<body>
+<div class="container">
+    <div class="statusBar"><img src="/static/img/Status Bar (iPhone).png"></div>
+    <div class="icon"> 
+        <a href="{% url 'health:main' %}"><img src="/static/img/arrowleft.png" alt="이전" class="../img/back_icon"></a>
+        <a><img src="/static/img/ic_menu.png" alt="목록" class="list_icon"></a>
+    </div>
+    <div class="info">
+        <div class="circle"><img src="/static/img/mascot.png"></div>
+        <h2 class="useName"> {{user.username}} 님</h2>
+    </div>
+    <div class="workout-container">
+        <h3 class="gymtext">내가 찜한 헬스장</h3>
+        <div class="gym">
+            <div class="row">
+                    <div class="workout-category" >
+                        <a href="{% url 'health:jamaGym' %}">
+                            <img src="/static/img/like1.png">
+                            <h2>자메이카 짐</h2> 
+                        </a>
+                     </div>
+                <div class="workout-category">
+                    <h2>짐박스 피트니스</h2>
+                    <img src="/static/img/like2.png">
+                </div>
+                <div class="workout-category">
+                   <h2>헬스왕 GYM</h2> 
+                    <img src="/static/img/like3.png">
+                 </div>
+              </div>
+              
+        </div>
+       
+        <h3 class="scraptext">내가 스크랩한 운동</h3>
+          <div class="scrap">
+          <div class="row">
+            <div class="workout-category">
+                <a href="{% url 'health:overhead' %}">
+                <h2>오버헤드 익스텐션</h2>
+                <img src="/static/img/scrap1.png"></a>
+            </div>
+            <div class="workout-category">
+                <h2>컬 덤벨</h2>
+              <img src="/static/img/scrap2.png">
+            </div>
+            <div class="workout-category">
+                <h2>래그 프레스</h2>
+              <img src="/static/img/scrap3.png">
+            </div>
+          </div>  
+          </div>
+          </div>
+          <div class="FooterBar">
+            <img src="/static/img/Safari Tool bar.png">
+          </div>
+
+<script src="/static/js/myPage.js"></script>
+</body>
+</html>

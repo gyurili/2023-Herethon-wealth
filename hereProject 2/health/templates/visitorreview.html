@@ -1,0 +1,90 @@
+<!-- 자메이카짐 상세 페이지 -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/visitorreview.css">
+    <title>WEALTH</title>
+    <style>
+        .review-box {
+            width: 280px;
+            height: 150px;
+            background-color: #f0f0f0;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="statusBar"><img src="/static/img/Status Bar (iPhone).png"></div>
+        <div class="icon"> 
+            <a href="{% url 'health:main' %}">
+                <img src="/static/img/logo3.png" alt="목록" class="list_icon">
+            </a>
+        </div>
+        <div class= "fst">
+            <img src = "/static/img/gyminfopicture.png"alt = "헬스장홍보사진">
+        </div>
+        <div class="sec">
+            <h1>자메이카 짐</h1>
+        </div>
+        <div class="coupon">
+            <img src = "/static/img/coupon.png" alt = "쿠폰">
+            <h2>33,000원 할인 쿠폰</h2>
+        </div>
+        <div class="thrd">
+            <img src = "/static/img/grayline.png"alt = "회색선">
+        </div>
+        <div class= "fourth">
+            <a href="{% url 'health:jamaGym'%}">
+            <img src = "/static/img/call.png"alt = "전화"> </a>
+            <a href="{% url 'health:jamaGymopen'%}">
+            <img src = "/static/img/openingthours.png"alt = "영업시간"></a>
+            <a href="{% url 'health:jamaGymprice'%}">
+                <img src = "/static/img/price.png"alt = "가격"></a>
+            <a href="{% url 'health:jamaGymevent'%}">
+                <img src = "/static/img/event.png"alt = "이벤트"></a>
+        </div>
+        
+        <!-- 시간 있으면 트레이너 폼  추가 -->
+        <div class="fifth">
+            <a href="{% url 'health:jamaGym'%}"><h3>트레이너 소개</h3></a>
+            <a href="{% url 'health:visitorreview' %}"><h3>방문자 리뷰</h3></a>
+        </div>
+
+
+        <div>
+            {% for review in reviews %}
+                <div class="box">
+                    <img src="/static/img/fullheart.png" alt="하트"></a>
+                    <div class="text">
+                    <h3>{{ review.title }}</h3>
+                    <h6>{{ review.body }}</h6>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+
+        <div class="reviewbutton">
+            <a href="{% url 'health:create_review' %}"><h2>리뷰 남기기</h2></a>
+        </div>
+
+    
+
+
+        <div class="FooterBar">
+            <img src="/static/img/Safari Tool bar.png">
+        </div>
+
+        
+    </div>
+    
+    
+
+</body>
+</html>

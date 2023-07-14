@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/css/arm_list.css">
+    <title>WEALTH</title>
+</head>
+<body>
+<div class="container">
+        <div class="statusBar"><img src="/static/img/Status Bar (iPhone).png"></div>
+        <div class="icon"> 
+            <a href="{% url 'health:main' %}"><alt="이전" class="logo">WEALTH</a>
+            <a href="#"><img src="/static/img/ic_menu.png" alt="목록" class="list_icon"></a>
+        </div>
+        <div class="category">
+            <a href="{% url 'health:health_list' %}"><img class="back_icon" src="/static/img/arrowleft.png" ></a>
+            <h2>어깨 & 팔</h2>
+        </div>
+        <div class="workoutbtn-container">
+            <div class="w1" >전체</div>
+            <div class="w2">맨몸</div>
+            <div class="w3">기구</div>
+            <div class="w4">덤벨</div>
+            <div class="w5">바벨</div>
+            <div class="w6" style="width: 39px;">케틀벨</div>
+            <div class="w7" style="width: 25px;">볼</div>
+            <div class="w8">밴드</div>
+        </div>
+        <div class="arm-container">
+            <div class="arm-category1" >
+                <a href="{% url 'health:overhead' %}">
+                    <h2 class="name">오버 헤드 익스텐션 </h2>
+                    <h2 class="level"> 덤벨, 난이도 ★★☆☆☆</h2> 
+                </a>
+            </div>
+            <div class="arm-category2" >
+                <h2 class="name">사이드 레터럴 레이즈 </h2>
+                <h2 class="level"> 덤벨, 난이도 ★☆☆☆☆</h2> 
+            </div>
+            <div class="arm-category3" >
+                <h2 class="name">벤치 프레스 </h2>
+                <h2 class="level"> 덤벨, 난이도 ★★☆☆☆</h2> 
+            </div>
+            <div class="arm-category4" >
+                <h2 class="name">플라이 </h2>
+                <h2 class="level"> 덤벨, 난이도 ★★☆☆☆</h2> 
+            </div>
+            <div class="arm-category5" >
+                <h2 class="name">로우 </h2>
+                <h2 class="level"> 덤벨, 난이도 ★☆☆☆☆</h2> 
+            </div>
+            <div class="arm-category6" >
+                <h2 class="name">숄더 프레스</h2>
+                <h2 class="level">덤벨, 난이도 ★☆☆☆☆</h2> 
+            </div>
+            <div class="arm-category7" >
+                <h2 class="name">컬 덤벨 </h2>
+                <h2 class="level"> 덤벨, 난이도 ★☆☆☆☆</h2> 
+            </div>
+        </div>
+        <div class="FooterBar">
+            <img src="/static/img/Safari Tool bar.png">
+        </div>
+</div>	
+    <script src="/static/js/arm_list.js"></script>
+</body>
+</html>

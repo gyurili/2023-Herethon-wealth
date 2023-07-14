@@ -1,0 +1,64 @@
+<!-- 자메이카짐 상세 페이지 -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/gymprice.css">
+    <title>WEALTH</title>
+</head>
+<body>
+    <div class="container">
+        <div class="statusBar"><img src="/static/img/Status Bar (iPhone).png"></div>
+        <div class= "fst">
+            <img src = "/static/img/gyminfopicture.png"alt = "헬스장홍보사진">
+        </div>
+        <div class="sec">
+            <h1>자메이카 짐</h1>
+        </div>
+            <div class="coupon">
+            <img src = "/static/img/coupon.png"alt = "쿠폰">
+                <h2>33,000원 할인 쿠폰</h2>
+            </div>
+
+            <div class="thrd">
+                <img src = "/static/img/gyminfo.png"alt = "헬스장소개">
+            </div>
+            <div class="line">
+                <img src = "/static/img/grayline.png"alt = "회색선">
+            </div>
+    
+    
+            <div class= "fourth">
+                <a href="{% url 'health:jamaGymcall'%}">
+                <img src = "/static/img/call.png"alt = "전화"> </a>
+                <a href="{% url 'health:jamaGymopen'%}">
+                <img src = "/static/img/openingthours.png"alt = "영업시간"></a>
+                <a href="{% url 'health:jamaGymprice'%}">
+                    <img src = "/static/img/price.png"alt = "가격"></a>
+                <a href="{% url 'health:jamaGymevent'%}">
+                    <img src = "/static/img/event.png"alt = "이벤트"></a>
+            </div>
+    
+
+
+        <div class="fifth">
+            <img src = "/static/img/textbox3.png"alt = "말풍선">
+            <h3>헬스 12개월 + PT2회 340,000원<br>해피타임 프로모션 회당 30,000원<br>바프 프로모션 2,000,000원<br>헬스 1개월 이용권 100,000원<br>헬스 3개월+PT1회 180,000원<br>헬스 6개월+PT2회 260,000원</h3>
+        </div>
+
+
+        <div class="thrd">
+            <img src = "/static/img/grayline.png"alt = "회색선">
+        </div>
+
+
+
+        <div class="FooterBar">
+            <img src="/static/img/Safari Tool bar.png">
+        </div>
+    </div>
+
+</body>
+</html>

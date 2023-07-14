@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/css/todayroutine.css">
+    <title>WEALTH</title>
+
+    <style>
+      .trash {width: 25px;}
+      .todo-list li { list-style: none; }
+      .todo-input {border:1px solid gray; width: 220px; height:20px;}
+      .add {border:1px solid #3A7BBC; border-radius: 15px; height:25px; background-color: #3A7BBC; color:white}
+      .box {border:1px solid gray}
+    </style>
+</head>
+<body>
+<div class="container">
+        <div class="statusBar"><img src="/static/img/Status Bar (iPhone).png"></div>
+        <div class="icon1"> 
+            <a href="{% url 'health:main' %}"><img src="/static/img/arrowleft.png" alt="이전" class="/static/img/back_icon"></a>
+                    <h2>오늘의 루틴</h2>
+            <a><img src="/static/img/ic_menu.png" alt="목록" class="list_icon"></a>
+        </div>
+        <div class="icon2">
+            <!--<a><img src="/static/img/bin.png" alt="휴지통" class="bin"></a>-->
+            <img src="/static/img/cardMascot2.png" class="mascot">
+            <!--<a><img src="/static/img/pen.png" alt="글쓰기" class="pen"></a>-->
+        </div>
+        <div class="todo-list-container">
+          <div id="input-box">
+            <form class="todo-form" action="{% url 'todo:create' %}" method="post">
+                {% csrf_token %}
+              <input class="todo-input" type="text" name="content" autocomplete="off" placeholder="오늘 할 운동" />
+              <input type="submit" button="true" class=add value = "추가" />
+            </form>
+          </div>
+          <form method="post" action="{% url 'todo:add_todo' %}">
+            {% csrf_token %}
+            {% for exercise in exercises %}
+                <input type="checkbox" name="selected_exercises" value="{{ exercise.pk }}">
+                <p>{{ exercise.name }}</p>
+            {% endfor %}
+            <input type="submit" hidden="선택 항목 모두 추가하기">
+          </form>
+          
+          <ul class="todo-list">
+            {% for todo in todos %}
+                <li>
+                    <!--<a href= "{% url 'todo:update' todo.id %}" >완료</a>-->
+                    <input type="checkbox">
+                    <span>{{todo.content}}</span>
+                    <a href= "{% url 'todo:delete' todo.id %}" ><img src="/static/img/bin.png" class="trash" alt="휴지통"></a>
+                      <!-- <a href= "{% url 'todo:delete' todo.id %}" > 삭제</a> -->
+                </li>
+            {% endfor %}
+          </ul>
+          <br>
+          </div>
+
+          <div class="wrap">
+            <a href="{% url 'health:main' %}">
+              <button class="clearbtn">
+                오늘의 운동 완료하기
+              </button>
+            </a>
+          </div>
+          
+          <div class="FooterBar">
+              <img src="/static/img/Safari Tool bar.png">
+          </div>
+</div>
+  
+<div id="pop_info_1" class="pop_wrap" style="display:none;">
+  <div class="pop_inner">
+      <p class="dsc">팝업창</p>
+      <button type="button" class="btn_close">닫기</button>
+  </div>
+</div>
+      <script src="/static/js/todayroutine.js"></script>
+</body>
+</html>
+  
+              <!-- <div class="todo5">
+                <input type="checkbox" class="check"></input>
+                <h3> 오버헤드 익스텐션</h3>
+                <img src="/static/img/cancel.png" class="cancel">
+                <div class="line"></div>
+              </div></div> 
+            <div class="arm-category1" >
+                    <h2 class="name"><input type="checkbox" name="exercise" value="{{ exercise1.name }}"> {{ exercise1.name }}</h2>
+                    <h2 class="level"> {{ exercise1.content }}</h2> 
+                </div>
+            -->
+
+
+
+
+<!-- 내가 쓴 코드
+  <form method="post" action="{% url 'todo:add_todo' %}">
+  {% csrf_token %}
+  {% for exercise in exercises %}
+      <input type="checkbox" name="selected_exercises" value="{{ exercise.pk }}">
+      {{ exercise.name }}<br>
+  {% endfor %}
+  <input type="submit" hidden="선택 항목 모두 추가하기">
+</form>
+
+<ul class="todo-list">
+  {% for todo in todos %}
+      <li>
+          <a href= "{% url 'todo:update' todo.id %}" > 완료</a>
+          <span>{{todo.content}}</span>
+          <a href= "{% url 'todo:delete' todo.id %}" > 삭제</a>
+      </li>
+  {% endfor %}
+</ul>
+<br>
+<ul class="done-list">
+  {% for done in dones %}
+      <li>
+          <a href= "{% url 'todo:update' done.id %}" > 취소</a>
+          <span>{{done.content}}</span>
+          <a href= "{% url 'todo:delete' done.id %}" > 삭제</a>
+      </li>
+
+  {% endfor %}
+</ul>
+
+<div id="input-box">
+  <form class="todo-form" action="{% url 'todo:create' %}" method="post">
+      {% csrf_token %}
+    <input class="todo-input" type="text" name="content" placeholder="할 일 작성하기" />
+    <input type="submit" hidden="true" />
+  </form>
+</div>
+
+
+-->

@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %} {% endblock %}
+    {% block head %} {% endblock %}
+</head>
+<body>
+
+
+    
+    <!-- 일단 nav 바 주석처리 함 -->
+    <!-- <nav>
+        <ul>
+            <li><a href="{% url 'health:main' %}">Home</a></li>
+            <li><a href="{% url 'health:gym' %}">헬스장</a></li>
+            <li><a href="{% url 'health:health_list' %}">운동</a></li>
+            <li><a href="{% url 'health:todo' %}">투두</a></li>
+            <li><a href="{% url 'health:mypage' %}">마이페이지</a></li>
+        </ul>
+    </nav> -->
+    {% block content %} {% endblock %}
+</body>
+</html>
