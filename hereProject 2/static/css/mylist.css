@@ -1,0 +1,204 @@
+/*화면 크기 맞추기*/
+body{
+    background-color: rgb(215, 208, 184);
+    height: 100%;
+    margin: 0;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    width: 390px;
+    height: 795px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.25);
+
+  }
+
+/*아이폰 상단바*/
+.statusBar,.FooterBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13.4615px 25px 11.5385px 25.9615px;
+    gap: 197.12px;
+    isolation: isolate;
+    width: 375px;
+    height: 45.19px;
+    margin: 0 auto;
+    margin-top: -13px;
+}
+/*이전, 목록 아이콘*/
+.icon {
+    display: flex;
+    justify-content: space-between; /* 아이콘을 좌우로 정렬하기 위해 justify-content를 space-between으로 설정 */
+    width: 100%;
+    margin-top: 64px;
+    margin-left: 24px;
+}
+.list_icon{
+    margin-right:13px;
+    margin-top:-10px;
+}
+/*My Page 텍스트*/
+h2{
+position: absolute;
+width: 89px;
+height: 24px;
+left: calc(50% - 88px/2);
+top: 110px;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 24px;
+display: flex;
+align-items: center;
+text-align: center;
+}
+/*circle 이미지*/
+.circle{
+position: absolute;
+width: 96px;
+height: 96px;
+left: calc(50% - 48px); 
+top: 130px; 
+background: #EDEDED;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.mascot {
+    width: 71.25px;
+    height: 63.75px;
+}
+/*사용자 이름*/
+.useName{
+color: #393939;
+margin-top: 130px;
+margin-left: 10px;
+}
+
+/* 내가 찜한 헬스장 */
+.workout-category h2{
+position: absolute;
+width: 116px;
+height: 36px;
+left: 25px;
+top: 278px;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+color: #393939;
+}
+/*내가 찜한 헬스장*/
+.scraptext, .gymtext{
+    position: absolute;
+    width: 130px;
+    height: 36px;
+    left: 50%;
+    top: -90px;
+    transform: translateX(-130%); 
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #393939;
+}
+.scraptext{ margin-left: 30px;top:130px; width: 150px;}
+.gymtext{margin-top: 35px;}
+.workout-container {
+    position: absolute;
+    width: 333px;
+    height: 440px;
+    top: 360px;
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .workout-container .row {
+    margin-bottom: 70px;
+  }
+  .workout-category {
+    position: relative;
+    width: 101px;
+    height: 117px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);    
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+  }
+.workout-category h2{
+    position: absolute;
+    display: flex;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+    top: 90px; 
+    left: 7px; 
+    margin: 0; 
+}
+.workout-category:hover{
+    background-color: rgba(58, 123, 188, 0.08); 
+}
+.workout-category img {
+    max-width: 100%;
+    margin-top: -15px;
+    width: 90px;
+    height: 90px;
+    max-width: 100%;
+    max-height: 100%;
+}
+.workout-category a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+  }
+/* Scrollbar customization */
+.row::-webkit-scrollbar {
+    width: 20px;
+    height: 6px;
+    background-color: #FFFFFF;
+  }
+  
+  .row::-webkit-scrollbar-thumb {
+    background-color: rgba(58, 123, 188, 0.03);
+  }
+  
+  .row::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(58, 123, 188, 0.08);
+  }
+  
+  .row::-webkit-scrollbar-track {
+    background-color: rgba(58, 123, 188, 0.08);
+    width: 1px;
+  }
+ 
+/*아이폰 하단바*/
+.FooterBar {
+    right: 16px;
+    margin-top: 735px;
+}

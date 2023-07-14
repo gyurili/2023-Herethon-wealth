@@ -1,0 +1,69 @@
+<!-- 자메이카짐 상세 페이지 -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/gymopeninghours.css">
+    <title>WEALTH</title>
+    <style>
+        .review-box {
+            width: 280px;
+            height: 150px;
+            background-color: #f0f0f0;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="statusBar"><img src="/static/img/Status Bar (iPhone).png"></div>
+        <div class= "fst">
+            <img src = "/static/img/gyminfopicture.png"alt = "헬스장홍보사진">
+        </div>
+        <div class="sec">
+            <h1>자메이카 짐</h1>
+        </div>
+        <div class="coupon">
+            <img src = "/static/img/coupon.png" alt ="쿠폰">
+            <h2>33,000원 할인 쿠폰</h2>
+        </div>
+
+            
+            <div class="thrd">
+                <img src = "/static/img/gyminfo.png"alt = "헬스장소개">
+            </div>
+            <div class="line">
+                <img src = "/static/img/grayline.png"alt = "회색선">
+            </div>
+    
+    
+            <div class= "fourth">
+                <a href="{% url 'health:jamaGymcall'%}">
+                <img src = "/static/img/call.png"alt = "전화"> </a>
+                <a href="{% url 'health:jamaGymopen'%}">
+                <img src = "/static/img/openingthours.png"alt = "영업시간"></a>
+                <a href="{% url 'health:jamaGymprice'%}">
+                    <img src = "/static/img/price.png"alt = "가격"></a>
+                <a href="{% url 'health:jamaGymevent'%}">
+                    <img src = "/static/img/event.png"alt = "이벤트"></a>
+            </div>
+
+        <div class="fifth">
+            <img src="/static/img/textbox2.png" alt="말풍선">
+            <h3>월 화 수 목 금 05:00 ~ 01:00<br>주말 07:00 ~ 23:00<br>공휴일 07:00 ~ 22:00</h3>
+        </div>
+
+        
+        
+        <div class="FooterBar">
+            <img src="/static/img/Safari Tool bar.png">
+        </div>
+    </div>
+
+
+</body>
+</html>

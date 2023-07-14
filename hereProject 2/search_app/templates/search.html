@@ -1,0 +1,155 @@
+<!-- 헬스장 검색 페이지 -->
+{% extends 'base.html' %} 
+{% load static %}
+{% block title %}
+<title>WEALTH</title>
+{% endblock %} 
+{% block head %}
+<link href="{% static 'css/gymsearch.css' %}" rel="stylesheet" />
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="statusBar"><img src="/static/img/Status Bar (iPhone).png"></div>
+    <div class="fst">
+        <a href="{% url 'health:main' %}"><img src="/static/img/logo3.png" alt="로고" class="logo"></a></a>
+        <a><img src="/static/img/ic_menu.png" alt="목록" class="list_icon"></a>
+    </div>
+
+    <!-- 검색 기능 -->
+    <div class="sec">
+        <form class="search" action="{% url 'search_app:searchResult' %}" method="get">
+            {% csrf_token %}
+            <input type="search" class="searchbar" placeholder="Search" autocomplete="off" aria-label="Search" name="q">
+            <button type="submit" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; border: none; background: none;">
+                <img src="/static/img/search.png" alt="돋보기" style="width: 20px; height: 20px;">
+            </button>
+            
+        </form>
+    </div>
+
+
+    <!-- <div class="sec">
+        <img src="/static/img/searchbar.png" style="width: 320px;height:auto;" alt="검색바">
+        <input class="search-input" placeholder="헬스장을 검색해보세요!"></input>
+        <img src="/static/img/search.png" style="position: absolute; top: 48%; left: 92%; transform: translate(-50%, -50%); width: 20px; height: 20px;" alt="돋보기">
+    </div> -->
+
+    <div class="workoutbtn-container">
+        <button class="w1"style=" border: none;
+            background-color: transparent;
+            outline: none;
+            font-size: 10px;"><a href="{% url 'health:gym' %}">기본</a></button>
+        <button class="w2"style=" border: none;
+            background-color: transparent;
+            outline: none;
+            font-size: 10px;">가까운 순</button>
+        <button class="w3"style=" border: none;
+            background-color: transparent;
+            outline: none;
+            font-size: 10px;"><a href="{% url 'health:gym_reverse' %}">여성 트레이너 있는</a></button>
+        <button class="w4"style=" border: none;
+            background-color: transparent;
+            outline: none;
+            font-size: 10px;">여성 전용</button>    
+        <button class="w4"style=" border: none;
+            background-color: transparent;
+            outline: none;
+            font-size: 10px;">마감 늦은 순</button>        
+    </div>
+
+    <div class="fourth">
+        <img src="/static/img/blackline.png" style="width: 90%;height:auto;" alt="선">
+    </div>
+
+    <div>
+        {% for place in places %}
+        <div class="fifth"><img src = "{{ place.photo.url }}" alt="" height="300">
+            <a href="{% url 'health:jamaGym'%}"><h3>{{ place.placeName }}</h3></a>
+            <h2>서울특별시 관악구 | 오전  6:00 영업 시작</h2>
+        </div>
+        {% endfor %}
+    </div>
+
+
+
+    <!-- <div class="fifth">
+        <a href="{% url 'health:jamaGym'%}"><img src="/static/img/gym.png" style="width: 320px;height:auto;" alt="헬스장사진"></a>
+        <h1>자메이카 짐</h1>
+        <img src="/static/img/share.png" alt="공유">
+        <img id="heartImage" src="/static/img/grayheart.png" alt="하트">
+        <h2>서울특별시 관악구 | 오전 6:00 영업 시작</h2>
+    </div> -->
+    <!-- <div class="sixth">
+        <img src="/static/img/gym.png" style="width: 320px;height:auto;" alt="헬스장사진">
+        <h1>MF토탈휘트니스</h1>
+        <img src="/static/img/share.png" alt="공유">
+        <img id="heartImage" src="/static/img/grayheart.png" alt="하트">
+        <h2>서울특별시 관악구 | 24시간 영업</h2>
+    </div>
+    <div class="sev">
+        <img src="/static/img/gym.png" style="width: 320px;height:auto;" alt="헬스장사진">
+        <h1>리턴투필라테스</h1>
+        <img src="/static/img/share.png" alt="공유">
+        <img id="heartImage" src="/static/img/grayheart.png" alt="하트">
+        <h2>대방동 970-21번지 3층 | 오전 6:00 영업 시작</h2>
+    </div> -->
+
+    <div class="FooterBar">
+        <img src="/static/img/Safari Tool bar.png">
+    </div>
+
+</div>
+
+<script src="gymsearch.js"></script>
+<script>
+    const grayHeartImages = document.querySelectorAll(
+        '.fifth img[src="img/grayheart.png"], .sixth img[src="img/grayheart.png"], .sev' +
+        ' img[src="img/grayheart.png"]'
+    );
+
+    grayHeartImages.forEach(function (image) {
+        image.addEventListener('click', function () {
+
+            if (image.src.includes('grayheart.png')) {
+
+                image.src = 'img/heart.png';
+            } else {
+
+                image.src = 'img/grayheart.png';
+            }
+        });
+    });
+</script>
+
+<!-- <script src="gymsearch.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+    $('.like-button').click(function(e) {
+        e.preventDefault();
+        var placeId = $(this).data('place-id');
+        var button = $(this);
+
+        $.ajax({
+        url: '/gym/like/',
+        type: 'POST',
+        data: {
+            'place_id': placeId,
+            'csrfmiddlewaretoken': '{{ csrf_token }}'
+        },
+        dataType: 'json',
+        success: function(response) {
+            if (response.success) {
+            if (response.liked) {
+                button.addClass('liked');
+            } else {
+                button.removeClass('liked');
+            }
+            }
+        }
+        });
+    });
+    });
+    </script> -->
+{% endblock %}

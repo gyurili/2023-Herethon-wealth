@@ -1,0 +1,104 @@
+<!-- 메인 페이지 -->
+{% extends 'base.html' %} 
+{% load static %}
+{% block title %}
+<title>WEALTH</title>
+{% endblock %} 
+{% block head %} 
+<link href="{% static 'css/Mainpage.css' %}" rel="stylesheet" />
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="statusBar"><img src="/static/img/Status Bar (iPhone).png"></div>
+
+    <div class="fst">
+        <a href="{% url 'health:main' %}"><img src="/static/img/logo3.png" alt="로고" class="logo"></a></a>
+        <a><img src="/static/img/ic_menu.png" alt="목록" class="list_icon"></a>
+    </div>
+    <div class="sec">
+        <div id="ad-container">
+        <img
+            src="/static/img/ad.png"
+            style="width: 100%; height: auto; text-align: center;"
+            alt="광고">
+        </div>
+        <!-- <img
+            src="/static/img/leftarrow.png"
+            style="position: absolute; top: 48%; left: 8%; transform: translate(-50%, -50%); width: 20px; height: 20px;"
+            alt="화살표">
+        <img
+            src="/static/img/rightarrow.png"
+            style="position: absolute; top: 48%; left: 92%; transform: translate(-50%, -50%); width: 20px; height: 20px;"
+            alt="화살표"> -->
+    </div>
+
+    <div class="thrd">
+        <div class="thrd_1">
+        <a href="{% url 'health:gym' %}">
+            <div class="image-container"> 
+            <h2>헬스장<br>검색</h2> 
+            <img src="/static/img/헬스장검색.png" style = "width:130px;height:268px;">
+        </a>
+    </div>
+    </div>
+        <div class="category">
+            <div class="image-container"> 
+            <a href="{% url 'health:health_list' %}">
+                <h2>기구사용법</h2>
+                <img src="/static/img/기구사용법.png">
+            </a>
+        </div>
+            <a href="{% url 'recRoutine:select_routine' %}">
+                <div class="image-container"> 
+                <h2>추천 루틴</h2>
+                <img src="/static/img/추천루틴.png">
+            </a>
+        </div>
+            <a href="{% url 'todo:todolist' %}">
+                <div class="image-container"> 
+                <h2>오늘의 루틴</h2>
+                <img src="/static/img/오늘의루틴.png">
+            </a>
+    </div>
+        </div>
+    </div>
+    <div class="fourth">
+        <a href="{% url 'health:mypage' %}">
+        <img src="/static/img/character.circle.png">
+        </a>
+    </div>
+
+    <div class="FooterBar">
+        <img src="/static/img/Safari Tool bar.png">
+    </div>
+
+    <script>
+        // 이미지 슬라이드에 사용될 이미지들의 배열
+        const images = ['/static/img/ad.png', '/static/img/ad2.png'];
+
+        // 이미지 슬라이드 인덱스
+        let currentIndex = 0;
+
+        // 이미지 슬라이드를 위한 함수
+        function slideImages() {
+            const adContainer = document.getElementById('ad-container');
+            adContainer.innerHTML = `<img src="${images[currentIndex]}" style="width: 100%; height: auto; text-align: center;" alt="광고">`;
+
+            // 다음 이미지로 이동
+            currentIndex++;
+            if (currentIndex >= images.length) {
+                currentIndex = 0; // 인덱스 초기화
+            }
+
+            // 일정 시간마다 이미지 슬라이드 실행
+            setTimeout(slideImages, 3000); // 2초마다 이미지 슬라이드
+        }
+
+        // 페이지 로드 시 이미지 슬라이드 시작
+        slideImages();
+    </script>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,125 @@
+body{
+    background-color: rgb(215, 208, 184);
+    height: 100%;
+    margin: 0;
+}
+.container {
+    display: flex;
+    width:390px;
+    height: 1150px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    flex-direction: column;
+  }
+  /*아이폰 상단바*/
+.statusBar,.FooterBar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13.4615px 25px 11.5385px 25.9615px;
+    gap: 197.12px;
+    isolation: isolate;
+    width: 375px;
+    height: 45.19px;
+    margin: 0 auto;
+    margin-top: -13px;
+    z-index: 1;
+}
+/*아이폰 하단바*/
+.FooterBar {
+    right: 16px;
+    margin-top: 1150px;
+}
+.line {
+    text-align: center;
+}
+.fst {  
+    position: relative;
+    margin : 0;
+    width:390px;
+    height:450px;
+    overflow: hidden;
+} 
+.fst img{
+    position: absolute;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+.sec{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 10px;
+}
+.coupon {
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 10px;
+}
+.coupon img {
+    width: 300px;
+    height: auto;
+    margin: 0 auto; /* 이미지를 가운데 정렬 */
+}
+.coupon h2 {
+    position: absolute;
+    top: 22%; /* h2 요소의 상단을 부모 요소의 중앙으로 위치 */
+    left: 45%; /* h2 요소의 좌측을 부모 요소의 중앙으로 위치 */
+    transform: translate(-50%, -50%); /* h2 요소를 수직 및 수평으로 중앙에 정렬 */
+    z-index: 1;
+    font-size: 15px;
+    color: black;
+    white-space: nowrap;
+}
+.thrd{
+    text-align: center;
+    margin-top: 8%;
+}
+.line {
+    text-align: center;
+}
+.fourth{
+    text-align: center;
+    margin-top: 30px;
+    word-spacing: 30px;
+}
+.fifth h3 {
+    position: absolute;
+    top: 43%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    text-align: left;
+    line-height: 180%;
+}
+a {
+    text-decoration: none;
+}
+.fifth {
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    width: 100%;
+}
+

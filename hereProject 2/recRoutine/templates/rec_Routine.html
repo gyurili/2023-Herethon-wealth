@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/css/wish.css">
+    <title>Wealth</title>
+
+    {% load static %}
+</head>
+<body>
+    <div class="container">
+        <div class="statusBar"><img src="/static/img/Status Bar (iPhone).png"></div>
+        <div class = "fst">
+            <h1>{{user.username}}님 반갑습니다!</h1>
+            <div class="character-container">
+                <img src="/static/img/character2.png" class="character" alt="캐릭터">
+            </div>
+        </div>
+
+        <div class="sec">
+            <h1>Wealth를 통해</h1>
+            <h1>이루고 싶은 것은 무엇인가요?</h1>
+        </div>
+
+        <div class = "thrd">
+            {% for routine in routine_list %}
+            <h2><a href="{% url 'recRoutine:exercise_list' routine.id %}">{{ routine.content }}</a></h2>
+            {% endfor %}
+            <img src="/static/img/todoform.png" class="todoex" alt="투두" style = "width:220px;height:47px;">
+
+            </a>
+        </div>
+        <div class = "thrd">
+            <img src="/static/img/todoform.png" class="todoex" alt="투두" style = "width:210px;height:47px;">
+            <h2>체중 감량이 필요해요</h2>
+        </div>
+        <div class = "thrd">
+            <img src="/static/img/todoform.png" class="todoex" alt="투두" style = "width:310px;height:47px;">
+            <h2>나만의 운동 루틴을 만들고 싶어요</h2>
+        </div>
+        <div class = "thrd">
+            <img src="/static/img/todoform.png" class="todoex" alt="투두" style = "width:310px;height:47px;">
+            <h2>운동을 하고 있는데 변화가 없어요</h2>
+        </div>
+        <div class = "thrd">
+            <img src="/static/img/todoform.png" class="todoex" alt="투두" style = "width:363px;height:47px;">
+            <h2>지금보다 효율적인 운동법을 찾고 싶어요 </h2>
+        </div>
+        <div class = "thrd">
+            <img src="/static/img/todoform.png" class="todoex" alt="투두" style = "width:230px;height:47px;">
+            <h2>자세를 교정하고 싶어요</h2>
+        </div>
+
+        <div class="FooterBar">
+            <img src="/static/img/Safari Tool bar.png">
+        </div>
+    </div>
+</body>
+</html>
+

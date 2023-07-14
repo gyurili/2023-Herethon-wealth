@@ -1,0 +1,81 @@
+/*화면 크기 맞추기*/
+body{
+    background-color: rgb(215, 208, 184);
+    height: 100%;
+    margin: 0;
+}
+.container {
+    align-items: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 390px;
+    height: 645px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.25);
+  }
+  /*이름*/
+.name, p{
+    position: absolute;
+    left: 50%;
+    top: 115px;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 19px;
+    font-family: 'Abhaya Libre SemiBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+/*마스코트 캐릭터*/
+.cardmascot,.laurel {
+    position: absolute;
+    width: 240px;
+    height: 167px;
+    left: 50%;
+    top: 220px;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+.laurel{
+    top: 255px;
+    z-index: 0;
+    left: 51%;
+}
+p{
+position: absolute;
+width: 200px;
+height: 54px;
+top: 370px;
+font-family: 'Abel';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 18px;
+display: flex;
+color: #000000;
+
+}
+/*아이콘 3개*/
+.icon {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    position: absolute;
+    top: calc(75%);
+  }
+  
+  .icon img {
+    width: 35px; 
+    height: 35px; 
+  }
+
+
+
+
